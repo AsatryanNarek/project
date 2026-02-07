@@ -18,7 +18,7 @@ def init_db():
         )""")
 
         db.execute("""
-        CREATE TABLE IF NOT EXISTS post (
+        CREATE TABLE IF NOT EXISTS posts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         text TEXT NOT NULL, 
         image TEXT, 
