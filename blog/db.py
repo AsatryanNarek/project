@@ -31,7 +31,7 @@ def init_db():
 
 def get_blog_sections():
     with get_db() as db:
-        sections = db.execute("SELECT * FROM sections")
+        sections = db.execute("SELECT * FROM sections").fetchall()
         return sections
 
 
@@ -52,8 +52,8 @@ def get_section_posts(section_id):
         posts = db.execute("""
         SELECT * FROM posts 
         WHERE section_id = ?
-        ORDER BY createt_at DESC 
-        """, (section_id)).fetchall()
+        ORDER BY created_at DESC 
+        """, (section_id,)).fetchall()
 
     return posts
 

@@ -18,9 +18,9 @@ def section_page(section_slug):
     if not section:
         return "Розділ не знайдено", 404
 
-    post = get_section_posts(sections["id"])
+    posts = get_section_posts(section["id"])
 
-    return render_template("section.html", sections=sections, section=section)
+    return render_template("section.html", sections=sections, section=section, posts=posts)
 
 @app.route("/add", methods=["GET", "POST"])
 def add_post():

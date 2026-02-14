@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    max-width: 900px;
+    max-width: 2000px;
     margin: auto;
     padding: 20px
 }
@@ -25,4 +25,9 @@ nav a {
 img {
     max-width: 100%;
     max-height: 350px;
+}
+
+a img{
+    width: 100px;
+    height: auto;
 }
