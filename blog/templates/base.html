@@ -9,6 +9,7 @@
 
 <header>
     <a href="{{ url_for('index') }}"><img src= "https://upload.wikimedia.org/wikipedia/commons/7/73/Wikipedia-logo-for-Ukraine.png"></a>
+    <a href="{{ url_for('add_post') }}">Створити статтю</a>
     <header>
         <nav>
               <div>
@@ -25,7 +26,6 @@
 </header>
 
 <hr>
-<a href="{{ url_for('add_post') }}">➕ Додати пост</a>
 
 {% block content %}{% endblock %}
 

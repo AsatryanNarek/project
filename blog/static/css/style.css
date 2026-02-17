@@ -27,7 +27,80 @@ img {
     max-height: 350px;
 }
 
-a img{
-    width: 100px;
+a img {
+    width: 120px;
     height: auto;
+}
+
+.b-radius {
+    border: 1px solid grey;
+    background-image: radial-gradient(circle at center center, transparent,rgb(255,255,255)),linear-gradient(309deg, rgba(90, 90, 90,0.05) 0%, rgba(90, 90, 90,0.05) 50%,rgba(206, 206, 206,0.05) 50%, rgba(206, 206, 206,0.05) 100%),linear-gradient(39deg, rgba(13, 13, 13,0.05) 0%, rgba(13, 13, 13,0.05) 50%,rgba(189, 189, 189,0.05) 50%, rgba(189, 189, 189,0.05) 100%),linear-gradient(144deg, rgba(249, 249, 249,0.05) 0%, rgba(249, 249, 249,0.05) 50%,rgba(111, 111, 111,0.05) 50%, rgba(111, 111, 111,0.05) 100%),linear-gradient(166deg, rgba(231, 231, 231,0.05) 0%, rgba(231, 231, 231,0.05) 50%,rgba(220, 220, 220,0.05) 50%, rgba(220, 220, 220,0.05) 100%),linear-gradient(212deg, rgba(80, 80, 80,0.05) 0%, rgba(80, 80, 80,0.05) 50%,rgba(243, 243, 243,0.05) 50%, rgba(243, 243, 243,0.05) 100%),radial-gradient(circle at center center, hsl(107,19%,100%),hsl(107,19%,100%));;
+}
+
+
+
+.text-box div {
+    margin: 10px 0;
+}
+
+.line1 {
+    font-size: 30px;
+    font-weight: Semi Bold;
+}
+
+.line2 {
+    font-size: 23px;
+}
+
+.line3 {
+    font-size: 18px;
+}
+
+.line4 {
+    font-size: 18px;
+}
+
+
+
+a {
+    color: rgb(125, 96, 176);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: rgb(82, 56, 127);
+}
+
+.box-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.box-left {
+    flex: 1;
+}
+
+.box-right {
+    width: 250px;
+    font-size: 14.5px;
+}
+
+
+
+
+.meta-links {
+    display: flex;
+    gap: 180px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.bottom-links {
+    margin-top: 6px;
 }
