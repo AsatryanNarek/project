@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ section.name }}{% endblock %}
+
+{% block content %}
+<h2>{{ section.name }}</h2>
+
+{% for post in posts %}
+    <a href="{{ url_for('article', section_slug=section.slug, post_id=post.id) }}">
+        <div class="post">
+            <p>{{ ' '.join((post.text or '').split()[:3]) }}{% if post.text.split()|length > 3 %}...{% endif %}</p>
+            <br>
+            <small>Опубліковано: {{ post.created_at }}</small>
+        </div>
+    </a>
+{% else %}
+    <p>У цьому розділі ще немає постів</p>
+{% endfor %}
+{% endblock %}

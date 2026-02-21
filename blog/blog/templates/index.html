@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+
+<div class="text-box">
+    <div class="b-radius">
+
+        <div class="box-row">
+
+            <div class="box-left">
+                <span class="line1">Ласкаво просимо до <a href= "http://127.0.0.1:5000">Вікіпедії</a> (<a href= "https://uk.wikipedia.org/wiki/Вікіпедія">ВікіпедіЯ</a>),</span><br>
+                <span class="line2">вільної енциклопедії, яку <a href= "https://uk.wikipedia.org/wiki/Вікіпедія:Ласкаво_просимо">може редагувати кожен</a>.</span><br>
+                <span class="line3"><a href= "https://uk.wikipedia.org/wiki/Українська_Вікіпедія">Українська Вікіпедія</a> заснована <a href= "https://uk.wikipedia.org/wiki/30_січня">30 січня</a> <a href= "https://uk.wikipedia.org/wiki/2004">2004</a> року</a>.</span><br>
+
+            <div class="meta-links">
+
+                <a href="https://uk.wikipedia.org/wiki/Довідка:Як_орієнтуватися_у_Вікіпедії/1">Навігація</a>
+                <a href="https://uk.wikipedia.org/wiki/Портал:Вміст">Зміст</a>
+                <a href="https://uk.wikipedia.org/wiki/Довідка:Реєстрація">Реєстрація</a>
+                <a href="https://uk.wikipedia.org/wiki/Вікіпедія:Довідка">Довідка</a>
+                <a href="https://uk.wikipedia.org/wiki/Вікіпедія:Вікіпроєкт">Проекти</a>
+            </div>
+            </div>
+
+            <div class="box-right">
+                <b>субота, 21 лютого 2026 року</b><br>
+                <b>1 408 067</b> статей українською<br>
+                <b>228 052</b> зареєстровані дописувачі<br>
+                <b>4261</b> з них активні остннього місяця
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="meta-links bottom-links">
+        {% for section in sections %}
+            <a href="{{ url_for('section_page', section_slug=section.slug) }}">
+                {{ section.name }}
+            </a>
+        {% else %}
+            Розділів поки немає
+        {% endfor %}
+    </div>
+
+</div>
+
+
+<div class="main-panels">
+
+    <!-- Левая большая карточка -->
+    <div class="panel big-panel">
+        <div class="panel-header">
+            <b>Вибрана стаття</b>
+        </div>
+
+        <div class="panel-content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Osyp_Nazaruk.jpg" class="panel-image">
+
+            <p><a href= "http://127.0.0.1:5000/biohrafii/2">Осип Тадейович Назарук</a> (1883 — 1940) — український <a href= "http://127.0.0.1:5000/ukraina/4">громадський</a> і <a href= "https://uk.wikipedia.org/wiki/Політик">політичний діяч</a>, письменник, журналіст, воєнний кореспондент, публіцист, адвокат. Автор численних праць на суспільно-політичні теми, праць з історії УСС та інших спогадів, історичних повістей, подорожніх репортажів, публіцистичних статей тощо.</p>
+            <p>Під час студентських років був членом різних українських гуртків та редакцій, зокрема входив до <a href= "http://127.0.0.1:5000/ukraina/3">Української радикальної партії</a>(УРП) (1905—1923). Під час <a href= "http://127.0.0.1:5000/ukraina/5">Першої світової війни</a> вступив до легіону Українських січових стрільців (УСС), став одним з організаторів Пресової кватири УСС.</p>
+            <p>Виконував дипломатичні функції на багатьох конференціях, зокрема був представником <a href= "http://127.0.0.1:5000/heohrafiia/6">Канади</a> від уряду ЗУНР в екзилі, членом президії <a href= "http://127.0.0.1:5000/ukraina/7">Західноукраїнського товариства Ліги Націй</a>. Очолював фінансову ініціативу «Позички національної оборони» для підтримки уряду ЗУНР в екзилі та дипломатичних місій.</p>
+
+
+            <a class="read-more" href="http://127.0.0.1:5000/biohrafii/2">Читати далі</a>
+        </div>
+    </div>
+
+
+    <!-- Правая колонка -->
+    <div class="side-panels">
+
+        <div class="panel">
+            <div class="panel-header"><b>Поточні події</b></div>
+
+            <ul class="panel-list">
+                <li>Пройшло перше засідання <a href= "http://127.0.0.1:5000/ukraina/9">Ради миру</a> <a href= "http://127.0.0.1:5000/biohrafii/8">Трампа</a> (19 лютого)</li>
+                <li>Британська поліція арештувала брата короля <a href= "http://127.0.0.1:5000/biohrafii/10">Чарльза III</a> <a href= "http://127.0.0.1:5000/biohrafii/10">експринца Ендрю</a> за підозрою у зловживанні на державній посаді (19 лютого)</li>
+                <li>Ексміністра енергетики <a href= "http://127.0.0.1:5000/biohrafii/11">Германа Галущенка</a> затримали при спробі виїзду з України у зв'язку зі <a href= "http://127.0.0.1:5000/ukraina/12">справою «Мідас»</a> (15 лютого)</li>
+                <li>Норвезький лижник <a href= "http://127.0.0.1:5000/biohrafii/13">Йоганнес Клебо</a> виграв дев'яту золоту медаль та став найуспішнішим спортсменом зимових <a href= "http://127.0.0.1:5000/sport/18">Олімпійських ігор</a> (15 лютого)</li>
+            </ul>
+        </div>
+
+        <div class="panel">
+            <div class="panel-header"><b>Цікавинки</b></div>
+
+            <ul class="panel-list">
+                <li><a href= "http://127.0.0.1:5000/tekhnolohii/14">Кавоварка Троянської кімнати</a> допомогла створити вебкамери</li>
+                <li>Через цю злочинницю було змінено законодавство <a href= "http://127.0.0.1:5000/heohrafiia/15">цілої країни</a></li>
+                <li><a href= "http://127.0.0.1:5000/heohrafiia/16">Народи Вануату</a> спілкувались та передавали нащадкам культурну спадщину через <a href= "http://127.0.0.1:5000/ukraina/17">малюнки на піску</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
