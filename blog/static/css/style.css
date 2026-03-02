@@ -38,6 +38,10 @@ a img {
 }
 
 
+.b-radius2 {
+    background-image: linear-gradient(224deg, transparent 0%, transparent 30%,rgba(249, 249, 249,0.02) 30%, rgba(249, 249, 249,0.02) 36%,transparent 36%, transparent 100%),linear-gradient(345deg, transparent 0%, transparent 53%,rgba(140, 140, 140,0.02) 53%, rgba(140, 140, 140,0.02) 63%,transparent 63%, transparent 100%),linear-gradient(284deg, transparent 0%, transparent 28%,rgba(1, 1, 1,0.02) 28%, rgba(1, 1, 1,0.02) 38%,transparent 38%, transparent 100%),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+}
+
 
 .text-box div {
     margin: 10px 0;
@@ -93,7 +97,7 @@ a:active {
 
 
 
-
+/* БУЛО
 .meta-links {
     display: flex;
     gap: 180px;
@@ -103,4 +107,91 @@ a:active {
 
 .bottom-links {
     margin-top: 6px;
+}*/
+
+/*СТАЛО*/
+
+.meta-links {
+    display: flex;
+    justify-content: space-around; /* рівномірний відступ між елементами всередині div */
+    flex-wrap: wrap; /* щоб переносились на новий рядок якщо їх дуже багато*/
+
+}
+
+.meta-links a {
+    padding: 20px;
+    text-decoration: none;
+}
+
+.post p { /*обмеження кількості символів у "превью" статті */
+    max-width: 60ch;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
+
+
+/* Общая сетка */
+.main-panels{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:15px;
+    margin-top:15px;
+}
+
+/* Общая карточка */
+.panel{
+    border:1px solid #a2a9b1;
+    background:#f8f9fa;
+}
+
+/* Заголовок */
+.panel-header{
+    background:#eaecf0;
+    padding:8px;
+    border-bottom:1px solid #a2a9b1;
+    font-size:18px;
+}
+
+/* Контент */
+.panel-content{
+    padding:12px;
+    position:relative;
+}
+
+/* Фото */
+.panel-image{
+    float:right;
+    width:150px;
+    margin-left:10px;
+}
+
+/* Правая колонка */
+.side-panels{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+/* Список */
+.panel-list{
+    padding:12px 20px;
+}
+
+.panel-list li{
+    margin-bottom:8px;
+}
+
+/* Кнопка */
+.read-more{
+    display:inline-block;
+    margin-top:10px;
+    padding:5px 10px;
+    border:1px solid #a2a9b1;
+    background:white;
+    text-decoration:none;
 }

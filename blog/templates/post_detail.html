@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<!--<h2>{{ post.name }}</h2>-->
+
+
+<div>
+    <a href="{{ url_for('section_page', section_slug=post_section.slug) }}">
+        Назад до розділу {{ post_section.name }}
+    </a>
+    <p>{{ post.text }}</p>
+
+    {% if post.image %}
+        <img src="{{ post.image }}" alt="">
+    {% endif %}
+    <br>
+    <small>Опубліковано: {{ post.created_at }}</small>
+</div>
+
+{% endblock %}

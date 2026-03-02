@@ -55,7 +55,7 @@ def get_section_posts(section_id):
         ORDER BY created_at DESC 
         """, (section_id,)).fetchall()
 
-    return posts
+        return posts
 
 
 def create_new_post(text, image, section_id):
@@ -66,8 +66,11 @@ def create_new_post(text, image, section_id):
                 """, (text, image, section_id))
         db.commit()
 
-def sections():
-    pass
+
+def post_by_id(post_id):
+    with get_db() as db:
+        post = db.execute("SELECT * FROM posts WHERE id = ?", (post_id,)).fetchone()
+        return post
 
 
 

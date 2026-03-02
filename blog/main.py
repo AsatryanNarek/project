@@ -9,7 +9,6 @@ def index():
     return render_template("index.html", sections=sections)
 
 
-
 @app.route("/<section_slug>")
 def section_page(section_slug):
     sections = get_blog_sections()
@@ -36,6 +35,20 @@ def add_post():
                                 section_slug=section["slug"]))
 
     return render_template("add_post.html", sections=sections)
+
+
+@app.route("/<section_slug>/<post_id>")
+def article(section_slug, post_id):
+    sections = get_blog_sections()
+    post = post_by_id(post_id)
+
+    if not post:
+        return "Статтю не знайдено", 404
+
+    post_section = get_section_by_id(post["section_id"])
+
+
+    return render_template("post_detail.html", sections=sections, post=post, post_section=post_section)
 
 
 app.run()

@@ -6,15 +6,13 @@
 <h2>{{ section.name }}</h2>
 
 {% for post in posts %}
-    <div class="post">
-        <p>{{ post.text }}</p>
-
-        {% if post.image %}
-            <img src="{{ post.image }}" alt="">
-        {% endif %}
-        <br>
-        <small>Опубліковано: {{ post.created_at }}</small>
-    </div>
+    <a href="{{ url_for('article', section_slug=section.slug, post_id=post.id) }}">
+        <div class="post">
+            <p>{{ ' '.join((post.text or '').split()[:3]) }}{% if post.text.split()|length > 3 %}...{% endif %}</p>
+            <br>
+            <small>Опубліковано: {{ post.created_at }}</small>
+        </div>
+    </a>
 {% else %}
     <p>У цьому розділі ще немає постів</p>
 {% endfor %}
